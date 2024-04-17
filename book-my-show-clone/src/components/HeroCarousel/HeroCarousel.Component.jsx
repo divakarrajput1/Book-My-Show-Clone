@@ -7,7 +7,7 @@ import { NextArrow, PrevArrow } from './Arrows.Component';
 
 const HeroCarousel =() =>{
 
-    const [images] = useState([
+    const [images, setImages] = useState([
        {
   "adult": false,
   "backdrop_path": "/jZIYaISP3GBSrVOPfrp98AMa8Ng.jpg",
@@ -90,40 +90,40 @@ const HeroCarousel =() =>{
 ]);
 
 // Config Info
-const settingsLG = {
-  dots: true,
-  arrows: true,
-  slidesToShow: 1,
-  infinite: true,
-  speed: 500,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  cssEase: "linear",
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
-}
+ const settingsLG = {
+   dots: true,  
+   arrows: true,
+   slidesToShow: 1,
+   infinite: true,
+   speed: 500,
+   slidesToScroll: 3,
+   autoplay: true,
+   autoplaySpeed: 2000,
+   cssEase: "linear",
+   nextArrow: <NextArrow />,
+   prevArrow: <PrevArrow />,
+ }
 
-const settings = {
+ const settings = {
   dots: true,
    arrows: true,
   slidesToShow: 1,
   infinite: true,
   speed: 500,
   slidesToScroll: 4,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  cssEase: "linear",
+   autoplay: true,
+   autoplaySpeed: 2000,
+   cssEase: "linear",
    nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
+   prevArrow: <PrevArrow />,
 }
 
  return (
      <>
        <div className='lg:hidden'>
-        <HeroSlider>
+        <HeroSlider {...settings}>
             {images.map((images, index)=> (
-                <div className='w-full h-56 md:h-80 py-3' >
+                <div className='w-full h-56 md:h-80 py-3' key={index} >
                   <img 
                     src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} 
                     alt='Hero Banner' 
@@ -133,21 +133,21 @@ const settings = {
               ))}
         </HeroSlider>
        </div>
-       <div className='hidden lg:block'></div>
-    <HeroSlider>
-            {images.map((images, index)=>
-                <div className='w-full h-96 px-2 py-3' >
+       <div className='hidden lg:block'>
+    <HeroSlider  {...settingsLG}>
+            {images.map((images, index)=> (
+                <div className='w-full h-96 px-2 py-3' key={index}>
                   <img 
                   src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} 
                   alt='Hero Banner' 
-                  className='w-full h-full rounded-md object-cover' />
+                  className='w-full h-full rounded-md object-cover'
+                  />
                 </div>
-              )
-            }
+              ))};
         </HeroSlider>
-    
-  </>
-  )
-}
+       </div>
+      </>
+  );
+};
 
 export default HeroCarousel;

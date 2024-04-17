@@ -9,10 +9,14 @@ export function NextArrow(props){
 }
 
 export function PrevArrow(props) {
-{/* <div style={} className=""></div> */}
+
  return(
         <>
-            <div className={props.className} style={{...props.style}} onClick={props.onClick}></div>        
+            <div 
+            className={props.className} 
+            style={{...props.style}} 
+            onClick={props.onClick}
+            ></div>        
         </>
     )
 }
