@@ -1,8 +1,9 @@
-//rafce
-import React from "react";
+// rafce
+import React from 'react'
 
 // react-slick
 import Slider from "react-slick";
+
 
 const EnterainmentCard = (props) => {
   return (
@@ -14,7 +15,7 @@ const EnterainmentCard = (props) => {
   )
 }
 
-
+// Main Component
 const EnterainmentCardSlider = () => {
   const EnterainmentImage = [
     "https://in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTI1KyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300/workshops-collection-202007231330.png",
@@ -75,5 +76,5 @@ const EnterainmentCardSlider = () => {
   )
 }
 
+export default EnterainmentCardSlider;
 
-export default EntertainmentCardSlider;

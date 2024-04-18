@@ -6,6 +6,7 @@ import { MovieContext } from "../context/Movie.Context";
 import Slider from "react-slick";
 import {FaCcVisa, FaCcApplePay} from "react-icons/fa"
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
+import MovieHero from "../components/MovieHero/MovieHero.Component";
 
 //hoc
 import MovieLayoutHoc from '../layout/Movie.layout'
