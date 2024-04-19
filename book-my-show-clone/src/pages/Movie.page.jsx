@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import {FaCcVisa, FaCcApplePay} from "react-icons/fa"
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 import MovieHero from "../components/MovieHero/MovieHero.Component";
+import Cast from "../components/Cast/Cast.Component";
+
 
 //hoc
 import MovieLayoutHoc from '../layout/Movie.layout'
@@ -45,6 +47,73 @@ const MoviePage = () => {
         };
         requestRecommendedMovies();
     }, [id]);
+
+const settingsCast ={
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings:{
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings:{
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings:{
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+    
+    const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings:{
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings:{
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings:{
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  };
+
 
     return  (
              <>
